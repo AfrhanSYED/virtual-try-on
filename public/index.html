@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Try-On - File Upload & Canvas Display</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📤 File Upload & Canvas Display</h1>
+            <p>Upload an image to see it displayed in the canvas below</p>
+        </header>
+        
+        <main>
+            <!-- File Upload Section -->
+            <section class="upload-section">
+                <div class="upload-area">
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                    <label for="fileInput" class="upload-btn">
+                        📸 Choose Image
+                    </label>
+                    <button id="uploadBtn" class="upload-btn primary">
+                        Upload & Display
+                    </button>
+                    <p id="fileNameDisplay" class="file-name"></p>
+                </div>
+                
+                <div id="status" class="status"></div>
+            </section>
+            
+            <!-- Canvas Display Section -->
+            <section class="canvas-section">
+                <h3>🖼️ Uploaded Image Preview</h3>
+                <div class="canvas-container">
+                    <canvas id="imageCanvas" width="400" height="300"></canvas>
+                </div>
+                <div class="canvas-info">
+                    <p id="canvasInfo">Upload an image to see it here</p>
+                </div>
+            </section>
+            
+            <!-- Console Output Preview -->
+            <section class="console-section">
+                <h3>📋 Console Output Preview</h3>
+                <div id="consolePreview" class="console-preview">
+                    <p class="console-line">Open browser console (F12) to see detailed logs</p>
+                    <p class="console-line">Look for: 📸 Selected file → 🚀 Upload → 🎉 SUCCESS → 🖼️ Canvas Displayed!</p>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Debug Tools -->
+        <footer>
+           
+            <div class="debug-info">
+                <button type="button" onclick="checkServer()" class="debug-btn">🏥 Check Server</button>
+                <button type="button" onclick="listUploads()" class="debug-btn">📁 List Uploads</button>
+                <button type="button" onclick="testUpload()" class="debug-btn">🧪 Test Endpoint</button>
+                <button type="button" onclick="debugUploadState()" class="debug-btn">🔍 Debug State</button>
+                <button type="button" onclick="clearCanvas()" class="debug-btn">🧹 Clear Canvas</button>
+                <button type="button" onclick="reloadCanvas()" class="debug-btn">🔄 Reload Image</button>
+                <button type="button" onclick="console.clear(); console.log('🧹 Console cleared')" class="debug-btn">📋 Clear Console</button>
+            </div>
+            
+            <div class="server-info">
+                <small>Server running on: <code>http://localhost:3000</code></small>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Simple upload & canvas script -->
+    <script src="script.js"></script>
+</body>
+</html>
